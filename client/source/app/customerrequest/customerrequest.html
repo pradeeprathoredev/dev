@@ -1,0 +1,37 @@
+<div class="phone-main-view full-width"><a class="btn btn--m btn--green btn--raised" ui-sref="root.phone.add" lx-ripple="lx-ripple"><i class="mdi mdi-plus-box mr"></i><span>Add New</span></a>
+  <div grid-data grid-options="gridOptions" grid-actions="gridActions" server-pagination=true class="card mt+">
+    <table  class="data-table">
+      <thead>
+        <tr class="heading">
+          <th>Request Id</th>
+          <th class="hide-sm">Customer Name</th>
+          <th class="hide-sm">Mobile Number</th>
+           <th class="hide-sm">Service</th>
+            <th class="hide-sm">Created Date-Time</th>
+             <th class="hide-sm">Appointment Date-Time</th>
+              <th class="hide-sm">Status</th>
+          <th class="text-center">Action</th>
+        </tr>
+        <tr>
+          <td class="divider divider--dark" colspan="8"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="data-table__clickable-row phone-item" ng-repeat="request in vm.requests track by $index">
+          <td><span>{{::request.order.id}}</span></td>
+          <td class="hide-sm"><span>{{::request.order.user.fullName}}</span></td>
+          <td class="hide-sm"><span>{{::request.order.user.mobile}}</span></td>
+          <td class="hide-sm"><span>{{::request.subServices.name}}</span></td>
+          <td class="hide-sm"><span>{{::request.order.createdOn}}</span></td>
+          <td class="hide-sm"><span>{{::request.order.orderAppointmentDate}}</span></td>
+          <td class="hide-sm"><span>{{::request.order.orderStatus}}</span></td>
+          <td class="text-center">
+            <button class="btn btn--m btn--red btn--fab" ng-click="vm.deleteRequest(request.order.id,request.order.user.fullName)" lx-ripple="lx-ripple" lx-tooltip="Delete"><i class="mdi mdi-delete"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--<lx-data-table lx-border="false" lx-thumbnail="true" lx-thead="vm.advancedDataTableThead" lx-tbody="vm.dataTableTbody"></lx-data-table>-->
+  </div>
+</div>
+

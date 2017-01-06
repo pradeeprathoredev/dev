@@ -1,0 +1,31 @@
+<div class="phone-main-view full-width"><a class="btn btn--m btn--green btn--raised" ui-sref="root.phone.add" lx-ripple="lx-ripple"><i class="mdi mdi-plus-box mr"></i><span>Add New</span></a>
+  <div class="card mt+">
+    <table class="data-table">
+      <thead>
+        <tr class="heading">
+          <th>Model</th>
+          <th class="hide-sm">OS</th>
+          <th class="hide-sm">Price</th>
+          <th class="text-center">Action</th>
+        </tr>
+        <tr>
+          <td class="divider divider--dark" colspan="4"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="empty-row" ng-if="vm.phones.length === 0">
+          <td colspan="4">No Phones found!</td>
+        </tr>
+        <tr class="data-table__clickable-row phone-item" ng-repeat="phone in vm.phones track by phone.id">
+          <td><span>{{::phone.model}}</span></td>
+          <td class="hide-sm"><span>{{::phone.os}}</span></td>
+          <td class="hide-sm"><span>{{::phone.price}}</span></td>
+          <td class="text-center"><a class="btn btn--m btn--blue btn--fab" ui-sref="root.phone.detail({id: phone.id})" lx-ripple="lx-ripple" lx-tooltip="View"><i class="mdi mdi-information"></i></a>
+            <button class="btn btn--m btn--red btn--fab" ng-click="vm.deletePhone(phone.id, phone.model)" lx-ripple="lx-ripple" lx-tooltip="Delete"><i class="mdi mdi-delete"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

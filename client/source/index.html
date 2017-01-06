@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-strict-di>
+  <head>
+    <style>
+      <div class="ng-hide">{ display: none!important; }</div>
+    </style>
+    <title ng-bind="title"></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <base href="/">
+    <!-- use this to break lines--><!-- build:css static/styles/lib.css -->
+<!-- bower:css -->
+<!-- endbower -->
+<!-- endbuild -->
+<!-- build:css static/styles/app.css -->
+<!-- inject:css -->
+<!-- endinject -->
+<!-- endbuild -->
+  </head>
+  <body ng-class="_class + '-page'">
+    <div class="wrapper">
+      <header class="header-view" ui-view="header"></header>
+      <div class="content">
+        <div class="sidebar-view" ui-view="sidebar" ng-class="{'show': showSidebar}"></div>
+        <div class="main-content">
+          <div class="breadcrumb-view" ui-view="breadcrumb"></div>
+          <div class="main-view" ui-view="main"></div>
+        </div>
+      </div>
+      <footer class="footer-view" ui-view="footer"></footer>
+    </div>
+    <!-- break line--><!-- build:js static/js/lib.js -->
+<!-- bower:js -->
+<!-- endbower -->
+<!-- inject:mockDeps:js -->
+<!-- endinject -->
+<!-- endbuild -->
+<!-- build:js static/js/app.js -->
+<!-- inject:js -->
+<!-- endinject -->
+<!-- inject:templates:js -->
+<!-- endinject -->
+<!-- endbuild -->
+<script src="static/vendor/angular-data-grid/dist/pagination.js"></script>
+  </body>
+</html>
