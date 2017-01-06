@@ -5,7 +5,7 @@
   "repository": "",
   "scripts": {
     "install": "bower install",
-    "start": "gulp serve:dev --mock",
+    "start": "gulp clean",
     "test": "gulp test:unit"
   },
   "license": "MIT",
